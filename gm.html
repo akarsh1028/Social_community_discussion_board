@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function(){
+
+    $('.r5').hide();
+
+    $('.r6').on('click', '.r', function(){
+      $(this).siblings('.r5').slideToggle();
+    });
+
+    $('.r6').on('click', '.r4', function(){
+      $(this).parent().parent().parent().append('<div class="media p-3"><img src="" class="mr-3 mt-3 rounded-circle"><div class="media-body r6"><h4>' + $('.r1',$(this).parent()).val() + '</h4><p>' + $('.r2',$(this).parent()).val() + '</p><button class="btn btn-link r">Reply</button><div class="media p-3 r5"><img src="" class="mr-3 mt-3 rounded-circle"><div class="media-body"><input type="text" class="r1"><br><textarea class="r2" rows="3"></textarea><br><button class="btn r4">Reply</button></div></div></div></div>');
+      $(this).parent().parent().hide();
+    });
+  });
+  </script>
+</head>
+<body>
+
+
+
+<center><h1>Social Community Discussion Board
+</h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="cva.html">Home</a></li>
+        <li><a href="prof.html">Professional</a></li>
+        <li class="active"><a href="comment.html">Social</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Calculator</a></li>
+            <li><a href="#">Maze Game</a></li>
+            <li><a href="#">Tic Tac Toe</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav></center>
+
+
+
+<div class="container">
+<div class="jumbotron">
+  <div class="media p-3">
+    <img src="avatar2.png" class="mr-3 mt-3 rounded-circle">
+    <div class="media-body r6">
+      <h4>Your Name</h4>
+      <p>Comment</p>
+      <button class="btn btn-link r">Reply</button>
+      <div class="media p-3 r5">
+        <img src="" class="mr-3 mt-3 rounded-circle">
+        <div class="media-body">
+          <input type="text" class="r1"><br>
+          <textarea class="r2" rows="3"></textarea><br>
+          <button class="btn r4">Reply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

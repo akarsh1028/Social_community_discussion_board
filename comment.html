@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<script>
+
+$(document).ready(function(){
+  $('.Main').on('click','.reply',function(){
+  $(this).siblings('.form').slideToggle();
+  });
+
+  $('.Main').on('click','.like',function(){
+    $(this).children('span').text(+$(this).children('span').text()+1);
+  });
+
+  $(".Main").on('click','.cmmt',function(){
+  $(this).parent().parent().parent().append('<div class=" p-3"><img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="" class="mr-3 mt-3 rounded-circle" style="width:75px;"><div class="media-body"><h4>'+$('.name',$(this).parent()).val()+'</h4><p>'+$('.reply1',$(this).parent()).val()+'</p>  <button class="btn btn-primary like" style="background-color:#3385ff;">Likes: <span class="Lcount">0</span></button>&nbsp<button class="btn btn-warning reply" style="background-color:#df80ff;">Replies: <span class="commentCount">0</span></button><div class="media p-3 form" style="display:none"><img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="" class="mr-3 mt-3 rounded-circle" style="width:75px;"><div class="media-body Main"><input type="text" class="form-control name" placeholder="Name"><br><textarea  rows="3" class="form-control reply1" placeholder="Write something..."></textarea><br><button class="btn btn-success cmmt">Comment</button></div></div></div></div>')
+  $(this).parent().parent().hide();
+  $(this).parent().parent().siblings('button').children('.commentCount').text(+$(this).parent().parent().siblings('button').children('.commentCount').text()+1);
+  $('.name',$(this).parent()).val('');
+  $('.reply1',$(this).parent()).val('');
+  });
+});
+
+</script>
+
+  </head>
+
+  <body>
+
+
+
+<center><h1>Social Community Discussion Board
+</h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="cva.html">Home</a></li>
+        <li><a href="prof.html">Professional</a></li>
+        <li class="active"><a href="comment.html">Social</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Calculator</a></li>
+            <li><a href="#">Maze Game</a></li>
+            <li><a href="#">Tic Tac Toe</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav></center>
+
+
+
+    <div class=container>
+
+      <div class="jumbotron">
+      <div class="media">
+        <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="" class="mr-3 mt-3 rounded-circle" style="width:75 px; height:80px;">
+        <div class="media-body Main">
+          <h4>Hello,Guys:</h4>
+         <br>
+          <button class="btn btn-primary like" style="background-color:#3385ff;">Likes: <span class="Lcount">0</span></button>
+          <button class="btn btn-warning reply" style="background-color:#df80ff;">Replies: <span class="commentCount">0</span></button>
+          <div class="media p-3 form" style="display:none">
+            <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="" class="mr-3 mt-3 rounded-circle" style="width:75px;">
+            <div class="media-body">
+              <input type="text" class="form-control name" placeholder="Name"><br>
+              <textarea  rows="3" class="form-control reply1" placeholder="Write something..."></textarea><br>
+              <button class="btn btn-success cmmt">Comment</button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+</div>
+  </body>
+
+</html>

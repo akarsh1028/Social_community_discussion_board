@@ -1,0 +1,172 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {            
+            $("#post").hide();
+            $("#1").hide();
+            $("#flip").hide();
+            $("#b1").click(function()
+                          {
+               $("#post").show("slow"); 
+            });
+            $("#b2").click(function()
+                          {
+               $("#post").hide("slow"); 
+            });
+            $("#b3").click(function()
+                          {
+                            $("#main").hide("slow"); 
+                            var n=$("#new").val();
+                            document.getElementById("name").innerHTML=n;
+                            var p=$("#comment").val();
+                            document.getElementById("demo").innerHTML=p;
+                            $("#1").show("slow");
+                            var dNow = new Date();
+            var localdate= 'Posted on '+(dNow.getDate()) + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' at ' + dNow.getHours() + ':' + dNow.getMinutes();
+            $('#time').text(localdate);
+            });
+            $("#panel").click(function()
+                          {
+               $("#flip").toggle("slow"); 
+            });
+            var lik=0;
+            $("#l").click(function()
+                          {
+                lik++;
+               document.getElementById("like").innerHTML=lik; 
+            });
+            var dlik=0;
+            $("#d").click(function()
+                          {
+                dlik++;
+               document.getElementById("dislike").innerHTML=dlik; 
+            });
+            $("#d").click(function()
+                          {
+               $("#post").show("slow"); 
+            });
+            var c=0;
+            $("#r").click(function()
+                          {
+               c++;
+               document.getElementById("c").innerHTML=c; 
+            });
+            $("#r").click(function(){
+
+               
+                 $(this).parent().parent().parent().append('<br><div class="media-left"><img src="avatar3.png" class="media-object img-circle" style="width:45px"></div><div class="media-body">'+$("#n").val()+'<h4 class="media-heading" id="name1"></h4>'+$("#pwd").val()+'<p id="comment1"></p></div>');
+                 
+            });
+        });
+
+    </script>
+ 
+</head>
+<body>
+
+<center><h1>Social Community Discussion Board
+</h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="cva.html">Home</a></li>
+        <li><a href="prof.html">Professional</a></li>
+        <li class="active"><a href="comment.html">Social</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Calculator</a></li>
+            <li><a href="#">Maze Game</a></li>
+            <li><a href="#">Tic Tac Toe</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav></center>
+
+
+
+
+    <div class="container">
+    <div class="jumbotron">
+        <div id="main">
+        <label>Name:</label>
+        <input type="text" class="form-control" placeholder="Enter your name" id="new"><br>
+        <h4>To Create Post Click Below</h4>  
+        <button class="btn btn-success" id="b1">New Post</button>
+        <div id="post"><br>
+        <input type="text" class="form-control" placeholder="Create post here.................." id="comment"><br>
+        <button class="btn btn-info" id="b3">Post</button>&nbsp;&nbsp;<button class="btn btn-danger" id="b2">Cancel Post</button>
+        </div>
+        </div>
+    <div class="media" id="1">
+        <div class="media-left">
+        <img class="media-object" src="avatar2.png" style="width: 45px">
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading" id="name" style="font-weight: 300;"><strong></strong></h3>
+            <p id="demo" style="font-size: 16px; font-style: italic;"></p>
+            &nbsp;&nbsp;&nbsp;<small><i id="time"></i></small><br>
+            <p id="panel" style="font-size: 12px;"><b>Reply</b></p>
+            <div style="margin-left: 50px; margin-top: -30px;">
+                <p id="like" style="font-size: 12px; font-family: cursive; "></p>
+                <div style="margin-left: 20px; margin-top: -30px;">
+                    <a href="#" id="l">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    </a>
+                </div>
+                <div style="margin-left: 50px; margin-top: 0px;">
+                    <small><p id="dislike" style="font-size: 12px;margin-top: -15px; font-family: cursive; "></p></small>
+                <div style="margin-left: 20px; margin-top: -30px;">
+                    <a href="#" id="d">
+                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                    </a></div></div>
+            <div style="margin-left: 50px; margin-top: 0px;">
+                    <small><p id="c" style="font-size: 12px;margin-top: -15px; margin-left: 50px; font-family: cursive; "></p></small>
+                <div style="margin-left: 70px; margin-top: -30px;">
+                    <a href="#">
+                    <span class="glyphicon glyphicon-comment"></span>
+                    </a></div></div></div><br>
+                    <div id="flip">
+                        
+                            <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="n" placeholder="Enter your name" required><br>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd">Comment:</label>
+                                <div class="col-sm-10">          
+                                <input type="text" class="form-control" id="pwd" placeholder="Comment here....." required><br>
+                                <button type="submit" class="btn btn-success" id="r" class="panel">Reply</button>
+          
+                                </div>
+                            </div>
+                        
+                    </div>
+        
+    </div>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
